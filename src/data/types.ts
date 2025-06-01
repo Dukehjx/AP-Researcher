@@ -49,37 +49,41 @@ export interface ResearchProject {
   id: string;
   title: string;
   abstract: string;
-  researcher: Author;
-  advisor?: Author;
-  researchField: string;
-  methodology: string[];
-  keyFindings: string[];
+  author: Author;
+  mentor?: Author;
+  researchArea: string;
+  methodology: string;
   academicYear: string;
-  submissionDate: string;
   tags: Tag[];
+  defenseDate: string;
   resources?: ProjectResource[];
   slug: string;
   featured?: boolean;
-  citations?: number;
 }
 
 export interface RepetitiveResearch {
   id: string;
   title: string;
-  description: string;
-  originalStudy: ResearchProject;
-  followUpStudies: ResearchProject[];
-  researchType: 'longitudinal' | 'comparative' | 'replication' | 'meta-analysis';
-  timespan: string;
-  keyEvolution: string[];
+  abstract: string;
+  author: Author;
+  originalStudy: {
+    title: string;
+    authors: string[];
+    year: number;
+    journal: string;
+  };
+  replicationScope: string;
+  findings: string;
+  academicYear: string;
   tags: Tag[];
+  completionDate: string;
   slug: string;
   featured?: boolean;
 }
 
 export interface ProjectResource {
   id: string;
-  type: 'pdf' | 'video' | 'presentation' | 'dataset' | 'image' | 'link';
+  type: 'pdf' | 'video' | 'presentation' | 'dataset' | 'image' | 'link' | 'paper';
   title: string;
   url: string;
   description?: string;
