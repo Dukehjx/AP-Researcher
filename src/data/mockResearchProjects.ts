@@ -1,4 +1,4 @@
-import { ResearchProject, Author, Tag } from './types';
+import type { ResearchProject, Author, Tag } from './types';
 
 // Sample authors for Research projects
 const researchAuthors: Author[] = [

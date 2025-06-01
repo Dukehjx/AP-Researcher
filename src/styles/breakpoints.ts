@@ -1,6 +1,20 @@
 // Responsive breakpoints and media query utilities
 
-export const breakpoints = {
+type BreakpointValues = {
+  xs: number;
+  sm: number;
+  md: number;
+  lg: number;
+  xl: number;
+  '2xl': number;
+};
+
+export const breakpoints: {
+  values: BreakpointValues;
+  up: (breakpoint: keyof BreakpointValues) => string;
+  down: (breakpoint: keyof BreakpointValues) => string;
+  between: (min: keyof BreakpointValues, max: keyof BreakpointValues) => string;
+} = {
   // Standard breakpoint values
   values: {
     xs: 0,
@@ -12,13 +26,13 @@ export const breakpoints = {
   },
   
   // Media query helpers
-  up: (breakpoint: keyof typeof breakpoints.values) => 
+  up: (breakpoint: keyof BreakpointValues) => 
     `@media (min-width: ${breakpoints.values[breakpoint]}px)`,
   
-  down: (breakpoint: keyof typeof breakpoints.values) => 
+  down: (breakpoint: keyof BreakpointValues) => 
     `@media (max-width: ${breakpoints.values[breakpoint] - 1}px)`,
     
-  between: (min: keyof typeof breakpoints.values, max: keyof typeof breakpoints.values) =>
+  between: (min: keyof BreakpointValues, max: keyof BreakpointValues) =>
     `@media (min-width: ${breakpoints.values[min]}px) and (max-width: ${breakpoints.values[max] - 1}px)`,
 } as const;
 

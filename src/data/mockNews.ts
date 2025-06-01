@@ -1,4 +1,4 @@
-import { NewsArticle, Author, Tag } from './types';
+import type { NewsArticle, Author, Tag } from './types';
 
 // Sample authors
 const authors: Author[] = [

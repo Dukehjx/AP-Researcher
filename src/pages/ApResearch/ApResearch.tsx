@@ -159,8 +159,8 @@ const ProjectMeta = styled.div`
 `;
 
 const CategoryTag = styled.span`
-  background: ${theme.colors.accent[100]};
-  color: ${theme.colors.accent[700]};
+  background: ${theme.colors.primary[100]};
+  color: ${theme.colors.primary[700]};
   font-size: ${theme.typography.fontSizes.xs};
   font-weight: ${theme.typography.fontWeights.medium};
   text-transform: uppercase;

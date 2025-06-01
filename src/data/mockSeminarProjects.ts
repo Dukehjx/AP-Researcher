@@ -1,4 +1,4 @@
-import { SeminarProject, Author, Tag } from './types';
+import type { SeminarProject, Author, Tag } from './types';
 
 // Sample authors for Seminar projects
 const seminarAuthors: Author[] = [

@@ -1,4 +1,4 @@
-import { RepetitiveResearch, Author, Tag } from './types';
+import type { RepetitiveResearch, Author, Tag } from './types';
 
 // Sample authors for Repetitive Research projects
 const repetitiveAuthors: Author[] = [
